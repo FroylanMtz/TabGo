@@ -1,6 +1,0 @@
-COLORES
-
-#009688 (0, 150, 136) - Teal 500
-#FF5722 (255, 87, 34) - deep organge 500
-#FF9800 (247, 183, 51) - Orange 500
-##BDBDBD (189, 189, 189) - gris 500 xd
