@@ -21,13 +21,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Restaurantes"></activity>
-
-        <activity android:name=".Buscar"></activity>
-
-        <activity android:name=".Cuenta"></activity>
-
-        <activity android:name=".Carrito"></activity>
+        <activity android:name=".Inicio"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
