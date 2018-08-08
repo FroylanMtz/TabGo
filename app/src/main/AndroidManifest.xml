@@ -23,6 +23,12 @@
 
         <activity android:name=".Inicio"></activity>
 
+        <activity android:name=".Registro"></activity>
+
+        <activity android:name=".Inicio_Repartidor"></activity>
+
+        <activity android:name=".Inicio_Restaurante"></activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

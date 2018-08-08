@@ -10,8 +10,35 @@
     <string name="txt_usuario">Usuario</string>
     <string name="txt_contrasena">Contraseña</string>
 
-    <string name="txt_titulo_inicio_sesion">Inicio Cliente</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_titulo_registro_usuario">Registro de Usuario</string>
+    <string name="txt_nombre_registro_usuario">Nombre</string>
+    <string name="txt_correo_registro_usuario">Correo</string>
+    <string name="txt_telefono_registro_usuario">Telefono</string>
+    <string name="txt_contrasena_registro_usuario">Contraseña</string>
+    <string name="txt_direccion_registro_usuario">Direccion</string>
+    <string name="txt_registrarse_registro_usuario">Registro</string>
+
+    <string name="txt_titulo_inicio_sesion">Inicio Cliente</string>
+    <string name="txt_sin_cuenta">¿No tienes cuenta?</string>
+    <string name="txt_registrate_aqui">Registrate Aqui</string>
+    <string name="txt_restaurantes_repartidores">Repartidores y Restaurantes inicien aqui</string>
+
+    <string name="txt_inicio_repartidor">Inicio Repartidor</string>
+    <string name="txt_parte_nuestro">¿Quieres ser parte de TabGo?</string>
+    <string name="txt_envia_cv">Envia tu CV aqui</string>
+    <string name="txt_clientes_restaurantes">Clientes y Restaurantes inicien aqui</string>
+
+
+    <string name="txt_inicio_restaurante">Inicio Restaurante</string>
+    <string name="txt_registrar_res_tabgo">Aparece en TabGo</string>
+    <string name="txt_registra_aqui">Registrar Negocio Aqui</string>
+    <string name="txt_clientes_repartidores">Clientes y Repartidores inicien aqui</string>
+
+    <string name="txt_titulo_restaurantes">Restaurantes</string>
+    <string name="txt_titulo_busqueda">Busqueda</string>
+    <string name="txt_titulo_cuenta">Cuenta</string>
+    <string name="txt_titulo_carrito">Carrito</string>
+
+    
 </resources>

@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <!-- <include
-        android:id="@+id/tool_bar"
-        layout="@layout/tool_bar" /> -->
+    android:layout_height="match_parent">
 
     <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
+        android:id="@+id/navigation_restaurant"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
@@ -21,13 +16,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation">
+        app:menu="@menu/menu_en_activity">
 
     </android.support.design.widget.BottomNavigationView>
 
-
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/fragment_container"
+        android:id="@+id/fragment_container_restaurant"
         android:layout_width="0dp"
         android:layout_height="577dp"
         android:layout_marginBottom="8dp"
@@ -38,6 +32,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></android.support.constraint.ConstraintLayout>
-
 
 </android.support.constraint.ConstraintLayout>

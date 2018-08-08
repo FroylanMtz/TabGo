@@ -1,29 +1,23 @@
 package com.example.froylan.tabgo;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+public class Inicio_negocio extends AppCompatActivity
+        implements BottomNavigationView.OnNavigationItemSelectedListener  {
 
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-
-
-public class Inicio extends AppCompatActivity
-        implements BottomNavigationView.OnNavigationItemSelectedListener {
-
-    //private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.inicio);
+        setContentView(R.layout.inicio_negocio);
 
 
-        BottomNavigationView navigation = findViewById(R.id.navigation);
+        BottomNavigationView navigation = findViewById(R.id.navigation_restaurant);
         navigation.setOnNavigationItemSelectedListener(this);
 
         loadFragment(new RestaurantFragment());
@@ -31,13 +25,14 @@ public class Inicio extends AppCompatActivity
 
     }
 
+
     private boolean loadFragment(Fragment fragment){
 
         if(fragment != null){
 
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+                    .replace(R.id.fragment_container_restaurant, fragment)
                     .commit();
 
             return true;
@@ -46,7 +41,6 @@ public class Inicio extends AppCompatActivity
         return false;
     }
 
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
@@ -54,20 +48,20 @@ public class Inicio extends AppCompatActivity
 
         switch (menuItem.getItemId()){
 
-            case R.id.navigation_restaurantes:
-                fragment = new RestaurantFragment();
+            case R.id.menu_home:
+                fragment = new HomeResFragment();
                 break;
 
-            case R.id.navigation_buscar:
-                fragment = new BuscarFragment();
+            case R.id.menu_carta:
+                fragment = new BuscarFragment(); //Cambiar por otro Fragment
                 break;
 
-            case R.id.navigation_carrito:
-                fragment = new CarritoFragment();
+            case R.id.menu_like:
+                fragment = new CarritoFragment(); //Cambiar por otro Fragment
                 break;
 
-            case R.id.navigation_cuenta:
-                fragment = new CuentaFragment();
+            case R.id.menu_carrito:
+                fragment = new CuentaFragment(); //Cambiar por otro Fragment
                 break;
 
         }
@@ -75,11 +69,5 @@ public class Inicio extends AppCompatActivity
         return loadFragment(fragment);
     }
 
-    public void ejecutar_inicio_negocio(View view){
 
-        Intent i = new Intent(this, Inicio_negocio.class);
-
-        startActivity(i);
-
-    }
 }
