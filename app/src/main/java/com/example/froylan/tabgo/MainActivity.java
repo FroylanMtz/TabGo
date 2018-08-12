@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
             BaseDeDatos.close();
         }
 
+
     }
 
 
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, Inicio.class);
 
         startActivity(i);
+
 
     }
 
@@ -80,5 +82,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
 
     }
+
+
 
 }

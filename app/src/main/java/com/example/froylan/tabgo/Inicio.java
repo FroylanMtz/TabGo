@@ -75,6 +75,7 @@ public class Inicio extends AppCompatActivity
         return loadFragment(fragment);
     }
 
+
     public void ejecutar_inicio_negocio(View view){
 
         Intent i = new Intent(this, Inicio_negocio.class);

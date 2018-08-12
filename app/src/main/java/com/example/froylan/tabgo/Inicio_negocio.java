@@ -20,7 +20,7 @@ public class Inicio_negocio extends AppCompatActivity
         BottomNavigationView navigation = findViewById(R.id.navigation_restaurant);
         navigation.setOnNavigationItemSelectedListener(this);
 
-        loadFragment(new RestaurantFragment());
+        loadFragment(new HomeResFragment() );
 
 
     }
@@ -53,15 +53,15 @@ public class Inicio_negocio extends AppCompatActivity
                 break;
 
             case R.id.menu_carta:
-                fragment = new BuscarFragment(); //Cambiar por otro Fragment
+                fragment = new MenuResFragment(); //Cambiar por otro Fragment
                 break;
 
             case R.id.menu_like:
-                fragment = new CarritoFragment(); //Cambiar por otro Fragment
+                fragment = new ResenaResFragment(); //Cambiar por otro Fragment
                 break;
 
             case R.id.menu_carrito:
-                fragment = new CuentaFragment(); //Cambiar por otro Fragment
+                fragment = new CarritoFragment(); //Cambiar por otro Fragment
                 break;
 
         }

@@ -21,22 +21,20 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/montserrat"
         android:text="@string/title_home"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <ScrollView
-        android:layout_width="350dp"
+        android:layout_width="356dp"
         android:layout_height="500dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -181,11 +179,15 @@
 
                     <ImageView
                         android:id="@+id/imageView5"
-                        android:layout_width="342dp"
+                        android:layout_width="292dp"
                         android:layout_height="172dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/antojitos_rosa" />
+                        app:srcCompat="@drawable/italian" />
 
                     <ImageView
                         android:id="@+id/imageView7"
@@ -204,7 +206,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="16dp"
                         android:layout_marginTop="48dp"
-                        android:text="10 - 15 min"
+                        android:text="15 - 18 min"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -219,7 +221,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="48dp"
-                        android:text="90%"
+                        android:text="80%"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -234,7 +236,7 @@
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
                         android:fontFamily="@font/montserrat"
-                        android:text="Antojitos Doña Rosa"
+                        android:text="Trattoria"
                         android:textColor="@android:color/black"
                         android:textSize="24sp"
                         app:layout_constraintEnd_toEndOf="parent"
