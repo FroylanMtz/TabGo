@@ -6,6 +6,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 
 public class Inicio_negocio extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener  {
@@ -69,5 +70,16 @@ public class Inicio_negocio extends AppCompatActivity
         return loadFragment(fragment);
     }
 
+    public void agregar_tacos_carrito(View view){
+
+    }
+
+    public void agregar_limonada_carrito(View view){
+
+    }
+
+    public void agregar_arroz_carrito(View view){
+
+    }
 
 }

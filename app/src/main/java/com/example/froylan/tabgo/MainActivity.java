@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
         if(fila.moveToFirst()){
 
             ejecutar_inicio();
+            et_correo.setText("");
+            et_contrasena.setText("");
+
             BaseDeDatos.close();
 
         }else{
@@ -53,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
     public void ejecutar_inicio(){
 
         Intent i = new Intent(this, Inicio.class);
+
+        i.putExtra("correo", et_correo.getText().toString());
+        i.putExtra("contrasena", et_contrasena.getText().toString());
 
         startActivity(i);
 

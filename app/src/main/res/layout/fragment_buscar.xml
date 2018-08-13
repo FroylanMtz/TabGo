@@ -36,7 +36,7 @@
         android:layout_width="500dp"
         android:layout_height="55dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="48dp"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.472"
@@ -57,7 +57,7 @@
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="@+id/viewBusqueda"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/viewBusqueda"
         app:layout_constraintVertical_bias="0.0" />
@@ -68,8 +68,8 @@
         android:layout_height="38dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view"
         app:srcCompat="@drawable/search" />
@@ -83,10 +83,10 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewBusqueda"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.107">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
