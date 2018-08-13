@@ -16,21 +16,32 @@ public class CarritoFragment extends Fragment {
     View view;
     TextView unTexto;
 
+    String nombreCliente;
+    String direccionCliente;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup parent, @Nullable Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_carrito, parent, false);
 
+        Bundle datos = this.getArguments();
+
+        nombreCliente = datos.getString("nombreCliente");
+        direccionCliente = datos.getString("direccionCliente");
+
         contenedor = (ConstraintLayout) view.findViewById(R.id.contenedor_carrito);
 
         unTexto = new TextView(getContext());
 
-        unTexto.setText(R.string.app_name);
+        unTexto.setText(nombreCliente);
+
+        unTexto.setTextSize(20);
 
         unTexto.setX(90);
         unTexto.setY(350);
-        
+
+
 
         contenedor.addView(unTexto);
 

@@ -22,6 +22,8 @@ public class Inicio extends AppCompatActivity
     //private Toolbar toolbar;
     String correo;
     String contrasena;
+    String nombreCliente;
+    String direccionCliente;
 
 
 
@@ -35,7 +37,7 @@ public class Inicio extends AppCompatActivity
         correo = datos.getString("correo");
         contrasena = datos.getString("contrasena");
 
-
+        obtener_datos();
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
@@ -77,6 +79,10 @@ public class Inicio extends AppCompatActivity
 
             case R.id.navigation_carrito:
                 fragment = new CarritoFragment();
+                Bundle bundle2 = new Bundle();
+                bundle2.putString("nombreCliente", nombreCliente);
+                bundle2.putString("direccionCliente", direccionCliente);
+                fragment.setArguments(bundle2);
                 break;
 
             case R.id.navigation_cuenta:
@@ -93,9 +99,35 @@ public class Inicio extends AppCompatActivity
     }
 
 
+    public void obtener_datos(){
+        AdminSQLiteOpenHelper admin  = new AdminSQLiteOpenHelper(this, "tabgo", null, 1);
+        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
+
+
+        Cursor fila = BaseDeDatos.rawQuery(
+                "SELECT nombre, direccion FROM usuarios WHERE TRIM(correo) = '"+correo.trim()+"' AND TRIM(contrasena) = '"+contrasena.trim()+"'", null);
+
+        if(fila.moveToFirst()){
+
+            nombreCliente = fila.getString(0);
+            direccionCliente = fila.getString(1);
+
+            BaseDeDatos.close();
+
+        }else{
+            Toast.makeText(this, "Error al iniciar, verifique los datos", Toast.LENGTH_SHORT).show();
+            BaseDeDatos.close();
+        }
+    }
+
     public void ejecutar_inicio_negocio(View view){
 
+
+
         Intent i = new Intent(this, Inicio_negocio.class);
+
+        i.putExtra("nombreCliente", nombreCliente );
+        i.putExtra("direccionCliente", direccionCliente );
 
         startActivity(i);
 
