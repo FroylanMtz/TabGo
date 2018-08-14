@@ -15,11 +15,9 @@ public class Inicio_negocio extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener  {
 
     String id;
-    int cantidad;
+    int cantidad = 0;
     String platillo;
     int precio;
-    String nombre_cliente;
-    String direccion_cliente;
 
     String direccionCliente;
     String nombreCliente;
@@ -77,6 +75,9 @@ public class Inicio_negocio extends AppCompatActivity
                 break;
 
             case R.id.menu_carrito:
+
+                insertar_datos_orden();
+
                 fragment = new CarritoFragment(); //Cambiar por otro Fragment
 
                 Bundle bundle = new Bundle();
@@ -91,13 +92,12 @@ public class Inicio_negocio extends AppCompatActivity
         return loadFragment(fragment);
     }
 
-    public void insertar_datos_orden(int cantidad){
+    public void insertar_datos_orden(){
         AdminSQLiteOpenHelper admin  = new AdminSQLiteOpenHelper(this, "tabgo", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
         ContentValues registroOrden = new ContentValues();
         registroOrden.put("id", nombreCliente);
-        registroOrden.put("cantidad", cantidad);
         registroOrden.put("nombre", nombreCliente);
         registroOrden.put("direccion", direccionCliente);
         BaseDeDatos.insert("ordenes", null, registroOrden);
@@ -105,14 +105,15 @@ public class Inicio_negocio extends AppCompatActivity
         BaseDeDatos.close();
     }
 
-    public void insertar_datos_platillo(String nombre_platillo, int precio){
+    public void insertar_datos_platillo(){
         AdminSQLiteOpenHelper admin  = new AdminSQLiteOpenHelper(this, "tabgo", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
         ContentValues registroPlatillo = new ContentValues();
         registroPlatillo.put("id", nombreCliente);
-        registroPlatillo.put("nombre", nombre_platillo);
+        registroPlatillo.put("nombre", platillo);
         registroPlatillo.put("precio", precio);
+        registroPlatillo.put("cantitad", cantidad);
         BaseDeDatos.insert("platillos", null, registroPlatillo);
 
         Toast.makeText(this, "Agregado al carrito", Toast.LENGTH_SHORT).show();
@@ -122,19 +123,30 @@ public class Inicio_negocio extends AppCompatActivity
 
     public void agregar_tacos_carrito(View view){
 
-        insertar_datos_platillo("orden de tacos", 80);
+
+        platillo = "Orden de tacos";
+        precio = 80;
+        cantidad = cantidad + 1;
+        insertar_datos_platillo();
 
     }
 
     public void agregar_limonada_carrito(View view){
 
-        insertar_datos_platillo("Limonada de 1lt", 20);
+
+        platillo = "Limonada de 1 lt";
+        precio = 20;
+        cantidad = cantidad + 1;
+        insertar_datos_platillo();
 
     }
 
     public void agregar_arroz_carrito(View view){
 
-        insertar_datos_platillo("Arroz con leche", 20);
+        platillo = "Arroz con leche";
+        precio = 20;
+        cantidad = cantidad + 1;
+        insertar_datos_platillo();
 
     }
 
