@@ -1,6 +1,7 @@
 package com.example.froylan.tabgo;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,10 +16,21 @@ public class Inicio_negocio extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener  {
 
     String id;
-    int cantidad = 0;
-    String platillo;
-    int precio;
 
+    //Datos a agregar de cada uno de los platillos
+    int cantidadTacos = 0;
+    String descripcionTacos;
+    int precioTacos = 0;
+
+    int cantidadLimonada = 0;
+    String descripcionLimonada;
+    int precioLimonada = 0;
+
+    int cantidadArroz = 0;
+    String descripcionArroz;
+    int precioArroz = 0;
+
+    //Datos a pasar en el Bundle
     String direccionCliente;
     String nombreCliente;
 
@@ -76,11 +88,31 @@ public class Inicio_negocio extends AppCompatActivity
 
             case R.id.menu_carrito:
 
-                insertar_datos_orden();
+                Bundle bundle = new Bundle();
+
+                if(cantidadTacos != 0){
+                    //insertar_datos_platillo(descripcionTacos, precioTacos, cantidadTacos);
+                    bundle.putString("descripcionTacos", descripcionTacos);
+                    bundle.putInt("precioTacos", precioTacos);
+                    bundle.putInt("cantidadTacos", cantidadTacos);
+                }
+
+                if(cantidadLimonada != 0){
+                    //insertar_datos_platillo(descripcionLimonada, precioLimonada, cantidadLimonada);
+                    bundle.putString("descripcionLimonada", descripcionLimonada);
+                    bundle.putInt("precioLimonada", precioLimonada);
+                    bundle.putInt("cantidadLimonada", cantidadLimonada);
+                }
+
+                if(cantidadArroz != 0){
+                    //insertar_datos_platillo(descripcionArroz, precioArroz, cantidadArroz);
+                    bundle.putString("descripcionArroz", descripcionArroz);
+                    bundle.putInt("precioArroz", precioArroz);
+                    bundle.putInt("cantidadArroz", cantidadArroz);
+                }
 
                 fragment = new CarritoFragment(); //Cambiar por otro Fragment
 
-                Bundle bundle = new Bundle();
                 bundle.putString("nombreCliente", nombreCliente);
                 bundle.putString("direccionCliente", direccionCliente);
                 fragment.setArguments(bundle);
@@ -92,61 +124,41 @@ public class Inicio_negocio extends AppCompatActivity
         return loadFragment(fragment);
     }
 
-    public void insertar_datos_orden(){
-        AdminSQLiteOpenHelper admin  = new AdminSQLiteOpenHelper(this, "tabgo", null, 1);
-        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
-
-        ContentValues registroOrden = new ContentValues();
-        registroOrden.put("id", nombreCliente);
-        registroOrden.put("nombre", nombreCliente);
-        registroOrden.put("direccion", direccionCliente);
-        BaseDeDatos.insert("ordenes", null, registroOrden);
-
-        BaseDeDatos.close();
-    }
-
-    public void insertar_datos_platillo(){
-        AdminSQLiteOpenHelper admin  = new AdminSQLiteOpenHelper(this, "tabgo", null, 1);
-        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
-
-        ContentValues registroPlatillo = new ContentValues();
-        registroPlatillo.put("id", nombreCliente);
-        registroPlatillo.put("nombre", platillo);
-        registroPlatillo.put("precio", precio);
-        registroPlatillo.put("cantitad", cantidad);
-        BaseDeDatos.insert("platillos", null, registroPlatillo);
-
-        Toast.makeText(this, "Agregado al carrito", Toast.LENGTH_SHORT).show();
-
-        BaseDeDatos.close();
-    }
 
     public void agregar_tacos_carrito(View view){
 
+        descripcionTacos = "Orden de tacos";
+        precioTacos = 80;
+        cantidadTacos = cantidadTacos + 1;
 
-        platillo = "Orden de tacos";
-        precio = 80;
-        cantidad = cantidad + 1;
-        insertar_datos_platillo();
+
+        Toast.makeText(this, "Agregado al carrito", Toast.LENGTH_SHORT).show();
+
+        //insertar_datos_platillo();
+
 
     }
 
     public void agregar_limonada_carrito(View view){
 
 
-        platillo = "Limonada de 1 lt";
-        precio = 20;
-        cantidad = cantidad + 1;
-        insertar_datos_platillo();
+        descripcionLimonada = "Limonada de 1 lt";
+        precioLimonada = 20;
+        cantidadLimonada = cantidadLimonada + 1;
+
+        Toast.makeText(this, "Agregado al carrito", Toast.LENGTH_SHORT).show();
+        //insertar_datos_platillo();
 
     }
 
     public void agregar_arroz_carrito(View view){
 
-        platillo = "Arroz con leche";
-        precio = 20;
-        cantidad = cantidad + 1;
-        insertar_datos_platillo();
+        descripcionArroz = "Arroz con leche";
+        precioArroz = 20;
+        cantidadArroz = cantidadArroz + 1;
+
+        Toast.makeText(this, "Agregado al carrito", Toast.LENGTH_SHORT).show();
+        //insertar_datos_platillo();
 
     }
 
