@@ -1,6 +1,7 @@
 package com.example.froylan.tabgo;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -161,5 +162,19 @@ public class Inicio_negocio extends AppCompatActivity
         //insertar_datos_platillo();
 
     }
+
+    public void ejecutar_siguiente(View view){
+
+        Intent i = new Intent(this, Siguiente_Paso.class);
+        i.putExtra("precioTacos", precioTacos );
+        i.putExtra("precioLimonada", precioLimonada );
+        i.putExtra("precioArroz", precioArroz);
+        i.putExtra("direccionCliente", direccionCliente);
+        i.putExtra("nombreCliente", nombreCliente);
+        startActivity(i);
+
+    }
+
+
 
 }

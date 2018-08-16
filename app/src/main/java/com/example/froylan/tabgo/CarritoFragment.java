@@ -1,5 +1,6 @@
 package com.example.froylan.tabgo;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -65,6 +66,7 @@ public class CarritoFragment extends Fragment {
         posY = posY + 70;
 
     }
+
 
 
 }
